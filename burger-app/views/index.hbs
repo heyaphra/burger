@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  
+  <div id='container'>
+    <header>
+      <h1>{{title}}</h1>
+      <p>Welcome to {{title}}</p>
+    </header>
+    <br>
+
+    <!-- Submit a burger -->
+    <form action='/burgers' method='POST'>
+      <textarea rows="4" cols="50" id='input_burger' name='burger_name'>Input burger name</textarea>
+      <input type='submit' id='submit_btn'></input>
+    </form>
+
+    <!-- Eat a burger -->
+    <div id='burgers'>
+      <h3>Menu</h3>
+      <hr>
+      {{#each burgers}}
+        {{#unless this.devoured}}
+          <form action='/burgers/{{this.id}}?_method=PUT' method='POST'>
+            <div class='available'>{{this.id}} • {{this.burger_name}} <button id='devour'>Devour</button></div>
+          </form>
+        {{/unless}}
+      {{/each}}
+    </div>
+
+    <!-- Burgers eaten -->
+    <div id='devoured'>
+      <h3>Eaten</h3>
+      <hr>
+      {{#each burgers}}
+        {{#if this.devoured}}
+          <div class='devoured'>{{this.burger_name}}</div>
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
+  
+</body>
+</html>
