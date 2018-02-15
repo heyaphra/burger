@@ -14,7 +14,7 @@ Brutalist Burgers utilizes Node.js with Express and Handlebars as the view engin
 ### Comments
 ***
 
-...
+The triangle was drawn with Vanilla JavaScript!
 
 
 ### Screen Shots
