@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
   burgers.selectAll(function(data) {
   var hbsObject = {
     burgers: data,
-    title: "Burgers Galore!"
+    title: "Brutalist Burgers"
   };
   res.render('index', hbsObject);
 });

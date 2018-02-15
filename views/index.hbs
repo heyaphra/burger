@@ -4,19 +4,22 @@
 <head>
   <meta charset="utf-8">
   <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+  <script src="https://use.fontawesome.com/10dc0a4223.js"></script>
 </head>
 <body>
   
   <div id='container'>
-    <header>
+    <header id ='brutal_header'>
       <h1>{{title}}</h1>
-      <p>Welcome to {{title}}</p>
+      <p></p>
     </header>
+    <hr id = 'brutal_hr'>
     <br>
 
     <!-- Submit a burger -->
-    <form action='/burgers' method='POST'>
-      <textarea rows="4" cols="50" id='input_burger' name='burger_name'>Input burger name</textarea>
+    <form action='/burgers' method='POST' id='sub_burger'>
+      <input type='text' id='input_burger' name='burger_name' placeholder='What would you like?'></input>
       <input type='submit' id='submit_btn'></input>
     </form>
 
@@ -27,7 +30,7 @@
       {{#each burgers}}
         {{#unless this.devoured}}
           <form action='/burgers/{{this.id}}?_method=PUT' method='POST'>
-            <div class='available'>{{this.id}} • {{this.burger_name}} <button id='devour'>Devour</button></div>
+            <div class='available'>{{this.burger_name}} <button id='devour'>Devour</button></div>
           </form>
         {{/unless}}
       {{/each}}
@@ -45,5 +48,30 @@
     </div>
   </div>
   
+  <div id ='copyright'>
+  <small><strong>site by bloom.510 :</strong></small>
+  <a href='https://github.com/wildcat510' target='_blank'><icon class="fab fa-github"></icon></a>
+  <a href='https://linkedin.com/in/bloom510' target='_blank'><icon class="fab fa-linkedin-square"></icon></a>
+  <a href='https://instagram.com/bloom.510' target='_blank'><icon class="fab fa-instagram"></icon></a>
+  <a href='https://bloom510.tumblr.com' target='_blank'><icon class="fab fa-tumblr-square"></icon></a>
+  </div>
+  
+  <script>
+  //   let i = 0;
+  // setInterval(function(){
+  //   let border_styles = ["dashed", "dotted", "dotted solid double dashed"];
+  //   let header = document.getElementById('brutal_header');
+  //   let hr = document.getElementById('brutal_hr');
+  //   let devoured = document.getElementById('devoured');
+  //   let burgers = document.getElementById('burgers');
+  //   if(i > border_styles.length){
+  //     i = 0;
+  //   }
+  //   devoured.style.borderStyle = border_styles[i];
+  //   burgers.style.borderStyle = border_styles[i];
+  // 
+  //   i++;
+  // }, 100);
+  </script>
 </body>
 </html>
