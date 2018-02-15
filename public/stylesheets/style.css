@@ -83,6 +83,11 @@ input[type="text"]{
   position: relative;
   margin-top: 6%;
 }
+#triangle2{
+  position: relative;
+  margin-top: 30%;
+}
+
 header{
 
   text-align: center;

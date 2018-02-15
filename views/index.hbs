@@ -20,6 +20,7 @@
         <icon id="eye" class="fas fa-eye"></icon>
        <img src='https://d30y9cdsu7xlg0.cloudfront.net/png/153732-200.png' id='burg' width='100' height='100' />
      </div>
+     
     <br>
 
     <!-- Submit a burger -->
@@ -51,6 +52,7 @@
         {{/if}}
       {{/each}}
     </div>
+    <div id='triangle2'></div>
   </div>
   
   <div id ='copyright'>
@@ -63,13 +65,13 @@
 <script>
 //append new hrs width decreasing by 15 percent until zero
 for(let pct = 0; pct < 85; pct += 5){
-  let hr = `<hr style='width:${pct}%';>`;
+  let hr = `<hr style='width:${pct}%;'>`;
   document.getElementById("triangle").innerHTML += hr;
 } 
-// for(let pct = 85; pct > 0; pct -= 5){
-//   let hr = `<hr style='width:${pct}%';>`;
-//   document.getElementById("triangle").innerHTML += hr;
-// } 
+for(let pct = 85; pct > -1; pct -= 5){
+  let hr = `<hr style='width:${pct}%';>`;
+  document.getElementById("triangle2").innerHTML += hr;
+} 
 </script>
 </body>
 </html>
