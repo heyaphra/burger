@@ -7,7 +7,7 @@ const burgers = require('../models/burger.js'); //model leveraging our ORM
 
 router.get('/', function(req, res) {
   burgers.selectAll(function(data) {
-  var hbsObject = {
+  let hbsObject = {
     burgers: data,
     title: "Brutalist Burgers"
   };
@@ -24,7 +24,7 @@ router.post('/burgers', function(req, res) {
 
 router.put('/burgers/:id', function(req, res){
   
-	var condition = "id = " + req.params.id;
+	let condition = "id = " + req.params.id;
 	  burgers.updateOne({
       devoured: true
    }, condition, function(data) {
