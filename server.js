@@ -16,16 +16,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
-//Routing / App Controller for sever-side actions based on ORM db calls
-
-
+//Requires the app controller which contains routing and ORM 
 const routes = require('./controllers/burgers_controller.js');
 
 app.use('/', routes);
-
-
-//router.GET(showAll), POST(create), PUT(update)
-//^^After coding, take care of the form data in /js^^
 
 app.listen(PORT, function(){
   console.log(`Listening at http://localhost:${PORT}`)
