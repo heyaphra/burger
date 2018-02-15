@@ -9,11 +9,17 @@
 <body>
   
   <div id='container'>
+    <div class='arrow-up'></div>
     <header id ='brutal_header'>
-       <img src='https://d30y9cdsu7xlg0.cloudfront.net/png/153732-200.png' width='100' height='100' />
+      
+       <br>
+    
       <h1>{{title}}</h1>
     </header>
-    <hr id = 'brutal_hr'>
+    <div id ='triangle'>
+        <icon id="eye" class="fas fa-eye"></icon>
+       <img src='https://d30y9cdsu7xlg0.cloudfront.net/png/153732-200.png' id='burg' width='100' height='100' />
+     </div>
     <br>
 
     <!-- Submit a burger -->
@@ -54,6 +60,16 @@
   <a href='https://instagram.com/bloom.510' target='_blank'><icon class="fab fa-instagram"></icon></a>
   <a href='https://bloom510.tumblr.com' target='_blank'><icon class="fab fa-tumblr-square"></icon></a>
   </div>
-
+<script>
+//append new hrs width decreasing by 15 percent until zero
+for(let pct = 0; pct < 85; pct += 5){
+  let hr = `<hr style='width:${pct}%';>`;
+  document.getElementById("triangle").innerHTML += hr;
+} 
+// for(let pct = 85; pct > 0; pct -= 5){
+//   let hr = `<hr style='width:${pct}%';>`;
+//   document.getElementById("triangle").innerHTML += hr;
+// } 
+</script>
 </body>
 </html>
